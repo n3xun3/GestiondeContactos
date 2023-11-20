@@ -3,8 +3,6 @@ package vista;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
@@ -15,8 +13,6 @@ import java.io.IOException;
 public class Vista extends JFrame {
     private JButton buttonDelete, buttonEdit, buttonAddContact;
     private JTable table;
-
-    private JLabel titleLabel;
     private DefaultTableModel defaultTableModel;
 
     public Vista() {
@@ -101,14 +97,12 @@ public class Vista extends JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        buttonDelete.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                int selectedRow = table.getSelectedRow();
-                if (selectedRow != -1) {
-                    defaultTableModel.removeRow(selectedRow);
-                } else {
-                    JOptionPane.showMessageDialog(Vista.this, "Select a row to delete.", "Error", JOptionPane.ERROR_MESSAGE);
-                }
+        buttonDelete.addActionListener(e -> {
+            int selectedRow = table.getSelectedRow();
+            if (selectedRow != -1) {
+                defaultTableModel.removeRow(selectedRow);
+            } else {
+                JOptionPane.showMessageDialog(Vista.this, "Select a row to delete.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
         add(buttonDelete);
@@ -127,17 +121,15 @@ public class Vista extends JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        buttonEdit.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                int selectedRow = table.getSelectedRow();
-                if (selectedRow != -1) {
-                    String nombre = (String) defaultTableModel.getValueAt(selectedRow, 0);
-                    String telefono = (String) defaultTableModel.getValueAt(selectedRow, 1);
-                    EditVentana editarVentana = new EditVentana(defaultTableModel, selectedRow, nombre, telefono);
-                    editarVentana.setVisible(true);
-                } else {
-                    JOptionPane.showMessageDialog(Vista.this, "Select a row to edit.", "Error", JOptionPane.ERROR_MESSAGE);
-                }
+        buttonEdit.addActionListener(e -> {
+            int selectedRow = table.getSelectedRow();
+            if (selectedRow != -1) {
+                String nombre = (String) defaultTableModel.getValueAt(selectedRow, 0);
+                String telefono = (String) defaultTableModel.getValueAt(selectedRow, 1);
+                EditVentana editarVentana = new EditVentana(defaultTableModel, selectedRow, nombre, telefono);
+                editarVentana.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(Vista.this, "Select a row to edit.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
         add(buttonEdit);
@@ -156,11 +148,9 @@ public class Vista extends JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        buttonAddContact.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                AddVentana addVentana = new AddVentana(defaultTableModel);
-                addVentana.setVisible(true);
-            }
+        buttonAddContact.addActionListener(e -> {
+            AddVentana addVentana = new AddVentana(defaultTableModel);
+            addVentana.setVisible(true);
         });
         add(buttonAddContact);
 
