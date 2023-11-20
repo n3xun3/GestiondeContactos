@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3f8bcd8c-d548-4afe-8730-f0f5fc948ca8" name="Changes" comment="Add validations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/AddVentana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/AddVentana.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/EditVentana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/EditVentana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vista/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/Vista.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +84,7 @@
       <updated>1699378813576</updated>
       <workItem from="1699378814748" duration="2051000" />
       <workItem from="1699620937958" duration="34000" />
-      <workItem from="1700500794559" duration="9247000" />
+      <workItem from="1700500794559" duration="10364000" />
     </task>
     <task id="LOCAL-00001" summary="Add new views and styles">
       <option name="closed" value="true" />
@@ -111,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700509389594</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add validations">
+      <option name="closed" value="true" />
+      <created>1700510142584</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700510142584</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

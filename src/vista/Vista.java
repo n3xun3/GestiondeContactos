@@ -5,6 +5,8 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -31,11 +33,59 @@ public class Vista extends JFrame {
             e.printStackTrace();
         }
         initializeVariables();
+        addHoverEffect();
         setVisible(true);
     }
 
+    public void addHoverEffect() {
+        // Efecto al pasar el ratón sobre el botón "Eliminar"
+        buttonDelete.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
+                buttonDelete.setBounds(490, 275, 110, 66);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                super.mouseExited(e);
+                buttonDelete.setBounds(500, 280, 100, 61);
+            }
+        });
+
+        // Efecto al pasar el ratón sobre el botón "Editar"
+        buttonEdit.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
+                buttonEdit.setBounds(490, 175, 110, 66);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                super.mouseExited(e);
+                buttonEdit.setBounds(500, 180, 100, 61);
+            }
+        });
+
+        // Efecto al pasar el ratón sobre el botón "Agregar Contacto"
+        buttonAddContact.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
+                buttonAddContact.setBounds(120, 445, 310, 110);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                super.mouseExited(e);
+                buttonAddContact.setBounds(130, 450, 300, 100);
+            }
+        });
+    }
+
     public void initializeVariables() {
-        Font buttonFont = new Font("Arial", Font.BOLD, 16); // Define una fuente para los botones
+
 
         buttonDelete = new JButton();
         buttonDelete.setBounds(500, 280, 100, 61);
@@ -137,6 +187,8 @@ public class Vista extends JFrame {
             e.printStackTrace();
         }
     }
+
+
 
 }
 
