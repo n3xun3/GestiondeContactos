@@ -22,7 +22,7 @@ public class EditVentana extends JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setTitle("Editar Contacto");
         try {
-            File iconFile = new File("src/files/icono.png"); // Reemplaza con la ruta de tu archivo de icono
+            File iconFile = new File("src/files/icono.png");
             Image iconImage = new ImageIcon(iconFile.toURI().toURL()).getImage();
             setIconImage(iconImage);
         } catch (IOException e) {
@@ -44,6 +44,18 @@ public class EditVentana extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String nuevoNombre = nombreField.getText();
                 String nuevoTelefono = telefonoField.getText();
+
+
+                if (nuevoNombre.isEmpty() || !nuevoNombre.matches("[a-zA-Z]+")) {
+                    JOptionPane.showMessageDialog(null, "Por favor, ingrese un nombre válido (solo texto).");
+                    return;
+                }
+
+
+                if (!nuevoTelefono.matches("\\d{9}")) {
+                    JOptionPane.showMessageDialog(null, "Por favor, ingrese un número de teléfono válido (9 dígitos numéricos).");
+                    return;
+                }
 
                 tablaModelo.setValueAt(nuevoNombre, filaSeleccionada, 0);
                 tablaModelo.setValueAt(nuevoTelefono, filaSeleccionada, 1);

@@ -20,10 +20,10 @@ public class AddVentana extends JFrame {
 
 
         setBounds(200, 200, 400, 300);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE); // Cierra esta ventana sin cerrar la aplicación principal
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setTitle("Add contact");
         try {
-            File iconFile = new File("src/files/icono.png"); // Reemplaza con la ruta de tu archivo de icono
+            File iconFile = new File("src/files/icono.png");
             Image iconImage = new ImageIcon(iconFile.toURI().toURL()).getImage();
             setIconImage(iconImage);
         } catch (IOException e) {
@@ -51,17 +51,22 @@ public class AddVentana extends JFrame {
         okButton.setBounds(100, 90, 80, 30);
         okButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Obtener datos de los campos
                 String nombre = nombreField.getText();
                 String telefono = telefonoField.getText();
 
-                // Agregar datos a la tabla en la ventana principal
-                if (!nombre.isEmpty() && !telefono.isEmpty()) {
-                    Object[] rowData = {nombre, telefono};
-                    tablaModelo.addRow(rowData); // Agregar nueva fila a la tabla
+                if (nombre.isEmpty() || !nombre.matches("[a-zA-Z]+")) {
+                    JOptionPane.showMessageDialog(null, "Por favor, ingrese un nombre válido (solo texto).");
+                    return;
+                }
+                if (!telefono.matches("\\d{9}")) {
+                    JOptionPane.showMessageDialog(null, "Por favor, ingrese un número de teléfono válido (9 dígitos numéricos).");
+                    return;
                 }
 
-                dispose(); // Cerrar esta ventana
+                Object[] rowData = {nombre, telefono};
+                tablaModelo.addRow(rowData);
+
+                dispose();
             }
         });
         add(okButton);
@@ -70,7 +75,7 @@ public class AddVentana extends JFrame {
         cancelButton.setBounds(200, 90, 100, 30);
         cancelButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                dispose(); // Cierra esta ventana sin realizar ninguna acción
+                dispose();
             }
         });
         add(cancelButton);
