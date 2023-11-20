@@ -38,7 +38,7 @@ public class Vista extends JFrame {
         Font buttonFont = new Font("Arial", Font.BOLD, 16); // Define una fuente para los botones
 
         buttonDelete = new JButton();
-        buttonDelete.setBounds(500, 260, 100, 61);
+        buttonDelete.setBounds(500, 280, 100, 61);
         buttonDelete.setOpaque(false); // Hace que el botón sea transparente
         buttonDelete.setContentAreaFilled(false); // Hace que el área de contenido del botón sea transparente
         buttonDelete.setBorderPainted(false); // Quita el borde del botón
@@ -64,7 +64,7 @@ public class Vista extends JFrame {
         add(buttonDelete);
 
         buttonEdit = new JButton();
-        buttonEdit.setBounds(500, 150, 100, 61);
+        buttonEdit.setBounds(500, 180, 100, 61);
         buttonEdit.setOpaque(false); // Hace que el botón sea transparente
         buttonEdit.setContentAreaFilled(false); // Hace que el área de contenido del botón sea transparente
         buttonEdit.setBorderPainted(false); // Quita el borde del botón
