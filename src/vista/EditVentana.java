@@ -8,19 +8,21 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
-public class EditVentana extends JFrame {
+public class EditVentana extends JDialog {
     JTextField nombreField, telefonoField;
+    JLabel nameLabel, phoneLabel;
     JButton okButton, cancelButton;
     DefaultTableModel tablaModelo;
     int filaSeleccionada;
 
-    public EditVentana(DefaultTableModel tablaModelo, int filaSeleccionada, String nombre, String telefono) {
+    public EditVentana(JFrame parent, DefaultTableModel tablaModelo, int filaSeleccionada, String nombre, String telefono) {
+        super(parent, "Editar Contacto", true);
         this.tablaModelo = tablaModelo;
         this.filaSeleccionada = filaSeleccionada;
 
         setBounds(300, 300, 400, 200);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setTitle("Editar Contacto");
+
         try {
             File iconFile = new File("src/files/icono.png");
             Image iconImage = new ImageIcon(iconFile.toURI().toURL()).getImage();
@@ -30,9 +32,17 @@ public class EditVentana extends JFrame {
         }
         setLayout(null);
 
+        nameLabel = new JLabel("Name:");
+        nameLabel.setBounds(30, 20, 80, 25);
+        add(nameLabel);
+
         nombreField = new JTextField(nombre);
         nombreField.setBounds(110, 20, 200, 25);
         add(nombreField);
+
+        phoneLabel = new JLabel("Phone:");
+        phoneLabel.setBounds(30, 50, 80, 25);
+        add(phoneLabel);
 
         telefonoField = new JTextField(telefono);
         telefonoField.setBounds(110, 50, 200, 25);
@@ -45,12 +55,10 @@ public class EditVentana extends JFrame {
                 String nuevoNombre = nombreField.getText();
                 String nuevoTelefono = telefonoField.getText();
 
-
                 if (nuevoNombre.isEmpty() || !nuevoNombre.matches("[a-zA-Z]+")) {
                     JOptionPane.showMessageDialog(null, "Por favor, ingrese un nombre válido (solo texto).");
                     return;
                 }
-
 
                 if (!nuevoTelefono.matches("\\d{9}")) {
                     JOptionPane.showMessageDialog(null, "Por favor, ingrese un número de teléfono válido (9 dígitos numéricos).");

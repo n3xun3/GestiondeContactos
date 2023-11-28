@@ -5,15 +5,13 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class Vista extends JFrame {
     private JButton buttonDelete, buttonEdit, buttonAddContact;
     private JTable table;
     private DefaultTableModel defaultTableModel;
+    JFrame mainFrame = new JFrame("Mi Aplicación");
 
     public Vista() {
         setBounds(100, 100, 700, 700);
@@ -34,18 +32,22 @@ public class Vista extends JFrame {
     }
 
     public void addHoverEffect() {
+
         // Efecto al pasar el ratón sobre el botón "Eliminar"
         buttonDelete.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);
                 buttonDelete.setBounds(490, 275, 110, 66);
+                setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 super.mouseExited(e);
                 buttonDelete.setBounds(500, 280, 100, 61);
+                setCursor(Cursor.getDefaultCursor());
+
             }
         });
 
@@ -55,12 +57,14 @@ public class Vista extends JFrame {
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);
                 buttonEdit.setBounds(490, 175, 110, 66);
+                setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 super.mouseExited(e);
                 buttonEdit.setBounds(500, 180, 100, 61);
+                setCursor(Cursor.getDefaultCursor());
             }
         });
 
@@ -70,12 +74,14 @@ public class Vista extends JFrame {
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);
                 buttonAddContact.setBounds(120, 445, 310, 110);
+                setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 super.mouseExited(e);
                 buttonAddContact.setBounds(130, 450, 300, 100);
+                setCursor(Cursor.getDefaultCursor());
             }
         });
     }
@@ -126,8 +132,10 @@ public class Vista extends JFrame {
             if (selectedRow != -1) {
                 String nombre = (String) defaultTableModel.getValueAt(selectedRow, 0);
                 String telefono = (String) defaultTableModel.getValueAt(selectedRow, 1);
-                EditVentana editarVentana = new EditVentana(defaultTableModel, selectedRow, nombre, telefono);
+                EditVentana editarVentana = new EditVentana(mainFrame, defaultTableModel, selectedRow, nombre, telefono);
+                editarVentana.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
                 editarVentana.setVisible(true);
+                guardarDatosEnArchivo("src/files/datos.txt");
             } else {
                 JOptionPane.showMessageDialog(Vista.this, "Select a row to edit.", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -148,9 +156,13 @@ public class Vista extends JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         buttonAddContact.addActionListener(e -> {
-            AddVentana addVentana = new AddVentana(defaultTableModel);
-            addVentana.setVisible(true);
+
+            AddVentana addDialog = new AddVentana(mainFrame, defaultTableModel);
+            addDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+            addDialog.setVisible(true);
+            guardarDatosEnArchivo("src/files/datos.txt");
         });
         add(buttonAddContact);
 
@@ -172,6 +184,19 @@ public class Vista extends JFrame {
                 if (datos.length == 2) {
                     defaultTableModel.addRow(datos); // Agregar fila a la tabla con los datos del archivo
                 }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void guardarDatosEnArchivo(String archivo) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo))) {
+            for (int i = 0; i < defaultTableModel.getRowCount(); i++) {
+                Object nombre = defaultTableModel.getValueAt(i, 0);
+                Object telefono = defaultTableModel.getValueAt(i, 1);
+                writer.write(nombre + "," + telefono);
+                writer.newLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
