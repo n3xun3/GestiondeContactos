@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="GestiondeContactos:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f8bcd8c-d548-4afe-8730-f0f5fc948ca8" name="Changes" comment="solutions warnings">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/AddVentana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/AddVentana.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/EditVentana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/EditVentana.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/Vista.java" afterDir="false" />
-    </list>
+    <list default="true" id="3f8bcd8c-d548-4afe-8730-f0f5fc948ca8" name="Changes" comment="solutions warnings" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,16 +148,5 @@
     <MESSAGE value="Add animation buttons" />
     <MESSAGE value="solutions warnings" />
     <option name="LAST_COMMIT_MESSAGE" value="solutions warnings" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/vista/Vista.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
