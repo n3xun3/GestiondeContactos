@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GestiondeContactos:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/GestiondeContactos_jar</output-path>
+    <root id="archive" name="GestiondeContactos.jar">
+      <element id="module-output" name="GestiondeContactos" />
+    </root>
+  </artifact>
+</component>
