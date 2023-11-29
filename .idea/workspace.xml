@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f8bcd8c-d548-4afe-8730-f0f5fc948ca8" name="Changes" comment="solutions warnings" />
+    <list default="true" id="3f8bcd8c-d548-4afe-8730-f0f5fc948ca8" name="Changes" comment="workspace">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700511883470</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="workspace">
+      <option name="closed" value="true" />
+      <created>1701252981262</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701252981262</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +158,7 @@
     <MESSAGE value="Add validations" />
     <MESSAGE value="Add animation buttons" />
     <MESSAGE value="solutions warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="solutions warnings" />
+    <MESSAGE value="workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace" />
   </component>
 </project>
