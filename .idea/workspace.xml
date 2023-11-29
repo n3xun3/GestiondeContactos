@@ -25,6 +25,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "n3xun3"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="6770c044-2c2c-4fe6-9cf0-bd6362589aa1" />
+        <option name="url" value="https://github.com/n3xun3/GestiondeContactos.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -87,6 +101,7 @@
       <workItem from="1699620937958" duration="34000" />
       <workItem from="1700500794559" duration="11634000" />
       <workItem from="1701196718327" duration="1313000" />
+      <workItem from="1701254012825" duration="381000" />
     </task>
     <task id="LOCAL-00001" summary="Add new views and styles">
       <option name="closed" value="true" />
@@ -152,7 +167,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701253164103</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="workspace">
+      <option name="closed" value="true" />
+      <created>1701254127490</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701254127490</updated>
+    </task>
+    <task id="LOCAL-00010" summary="workspace">
+      <option name="closed" value="true" />
+      <created>1701254158991</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701254158991</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
