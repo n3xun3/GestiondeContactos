@@ -5,24 +5,33 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
-public class AddVentana extends JDialog {
+public class AddVentana extends JFrame {
 
     JTextField nombreField, telefonoField;
     JLabel nombreLabel, telefonoLabel;
     JButton okButton, cancelButton;
     DefaultTableModel tablaModelo;
+    public AddVentana(DefaultTableModel tablaModelo) {
 
-    public AddVentana(JFrame parent, DefaultTableModel tablaModelo) {
-        super(parent, "Add contact", true);
         this.tablaModelo = tablaModelo;
+
 
         setBounds(200, 200, 400, 300);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-
+        setTitle("Add contact");
+        try {
+            File iconFile = new File("src/files/icono.png");
+            Image iconImage = new ImageIcon(iconFile.toURI().toURL()).getImage();
+            setIconImage(iconImage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         setLayout(null);
 
-        nombreLabel = new JLabel("Name:");
+        nombreLabel = new JLabel("Nombre:");
         nombreLabel.setBounds(20, 20, 80, 25);
         add(nombreLabel);
 
@@ -30,7 +39,7 @@ public class AddVentana extends JDialog {
         nombreField.setBounds(110, 20, 200, 25);
         add(nombreField);
 
-        telefonoLabel = new JLabel("Phone:");
+        telefonoLabel = new JLabel("Teléfono:");
         telefonoLabel.setBounds(20, 50, 80, 25);
         add(telefonoLabel);
 
